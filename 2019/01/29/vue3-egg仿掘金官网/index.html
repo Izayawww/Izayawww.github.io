@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>vue3+egg仿掘金官网 - Izaya&#39;s blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="看了egg.js后突然就想搞个全栈的项目玩玩，又喜欢在掘金上逛，所以就开发了这个项目。虽说vue3.0还没定下来，但已经能用了，喜欢它的直接在网页上搞项目，所以就用了3。">
+<meta name="keywords" content="vue,egg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue3+egg仿掘金官网">
+<meta property="og:url" content="http://yoursite.com/2019/01/29/vue3-egg仿掘金官网/index.html">
+<meta property="og:site_name" content="Izaya&#39;s blog">
+<meta property="og:description" content="看了egg.js后突然就想搞个全栈的项目玩玩，又喜欢在掘金上逛，所以就开发了这个项目。虽说vue3.0还没定下来，但已经能用了，喜欢它的直接在网页上搞项目，所以就用了3。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4be724eefa6a?w=1436&h=716&f=png&s=133630">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4bedac9c69a2?w=1435&h=724&f=png&s=86065">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c5f984a643f16?w=1440&h=831&f=png&s=158671">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/20/167c9a3dfbd54631?w=1434&h=831&f=png&s=210388">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/21/167d13aa0f0ece1a?w=1920&h=1058&f=png&s=175000">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/24/167de3ce9fe45791?w=1920&h=1080&f=png&s=325413">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4e5e83ef0fce?w=1440&h=900&f=png&s=79853">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4e70c23da0dd?w=1440&h=900&f=png&s=97555">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4e88dd0cb553?w=1440&h=900&f=png&s=126923">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4e964837538a?w=1440&h=900&f=png&s=155016">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4ed71b9309de?w=1440&h=900&f=png&s=104023">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4f197ca67aa5?w=1440&h=900&f=png&s=105407">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4f356a18c357?w=1440&h=900&f=png&s=166690">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c51271b4ba26b?w=1440&h=900&f=png&s=118632">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4f9a6b5a0861?w=1440&h=900&f=png&s=134780">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4f9cf38b6c72?w=1440&h=900&f=png&s=97550">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4ff78c2d9dd9?w=1311&h=782&f=png&s=216693">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c5010f928cbd7?w=1492&h=726&f=png&s=86054">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c501ee9bb63a4?w=1920&h=1080&f=png&s=199090">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c50890f83e3e4?w=1779&h=922&f=png&s=106339">
+<meta property="og:updated_time" content="2019-02-22T06:55:53.190Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue3+egg仿掘金官网">
+<meta name="twitter:description" content="看了egg.js后突然就想搞个全栈的项目玩玩，又喜欢在掘金上逛，所以就开发了这个项目。虽说vue3.0还没定下来，但已经能用了，喜欢它的直接在网页上搞项目，所以就用了3。">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/12/19/167c4be724eefa6a?w=1436&h=716&f=png&s=133630">
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/head.png" alt="vue3+egg仿掘金官网" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/categories">分类</a>
+                
+                <a class="navbar-item" href="/tags">标签</a>
+                
+                <a class="navbar-item" href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/Izayawww">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/img/juejin.svg" alt="vue3+egg仿掘金官网">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-29T06:40:38.000Z">2019-01-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10 分钟 读完 (大约 1469 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                vue3+egg仿掘金官网
+            
+        </h1>
+        <div class="content">
+            <p>看了egg.js后突然就想搞个全栈的项目玩玩，又喜欢在掘金上逛，所以就开发了这个项目。虽说vue3.0还没定下来，但已经能用了，喜欢它的直接在网页上搞项目，所以就用了3。<br><a href="https://github.com/Izayawww/like-juejin" target="_blank" rel="noopener">GIT地址</a><br><a href="http://lucaswww.coding.me/myjuejin/#/" target="_blank" rel="noopener">预览地址</a>有些地方用的假数据</p>
+<h3 id="已完成"><a href="#已完成" class="headerlink" title="已完成"></a>已完成</h3><p>● 首页标签分类预览<br>● 修改个人信息<br>● 图片上传<br>● 文章详情<br>● 发布沸点<br><a id="more"></a></p>
+<h3 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h3><p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4be724eefa6a?w=1436&amp;h=716&amp;f=png&amp;s=133630" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4bedac9c69a2?w=1435&amp;h=724&amp;f=png&amp;s=86065" alt=""><br>18/12/19 18 文章详情1.0<br><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c5f984a643f16?w=1440&amp;h=831&amp;f=png&amp;s=158671" alt=""></p>
+<p>18/12/20 11 文章详情2.0<br><img src="https://user-gold-cdn.xitu.io/2018/12/20/167c9a3dfbd54631?w=1434&amp;h=831&amp;f=png&amp;s=210388" alt=""></p>
+<p>18/12/21 10<br>昨天把服务器弄好了<br><a href="http://134.175.224.127:8081/" target="_blank" rel="noopener">http://134.175.224.127:8081/</a><br>访问会很慢后面再慢慢弄，正好把域名也弄好</p>
+<p>18/12/21 22 动态页面1.0<br><img src="https://user-gold-cdn.xitu.io/2018/12/21/167d13aa0f0ece1a?w=1920&amp;h=1058&amp;f=png&amp;s=175000" alt=""></p>
+<p>18/12/24 11 动态页面2.0 增加实时发布功能<br><img src="https://user-gold-cdn.xitu.io/2018/12/24/167de3ce9fe45791?w=1920&amp;h=1080&amp;f=png&amp;s=325413" alt=""></p>
+<h3 id="项目包含"><a href="#项目包含" class="headerlink" title="项目包含"></a>项目包含</h3><ol>
+<li><a href="https://cli.vuejs.org/zh/guide/prototyping.html" target="_blank" rel="noopener">vue3.0</a></li>
+<li><a href="https://eggjs.org/zh-cn/intro/quickstart.html" target="_blank" rel="noopener">egg.js</a></li>
+<li>腾讯云图片上传</li>
+</ol>
+<h3 id="项目搭建"><a href="#项目搭建" class="headerlink" title="项目搭建"></a>项目搭建</h3><h4 id="vue3-0"><a href="#vue3-0" class="headerlink" title="vue3.0"></a>vue3.0</h4><p>3的话可以向之前一样用命令行建项目，也可以用图形化界面来创建，我自己的话是用图形化界面建立的，这也是选择3的原因之一<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//安装</span><br><span class="line">npm install -g @vue/cli</span><br><span class="line">//查看版本</span><br><span class="line">vue --version</span><br><span class="line">//打开图形化界面</span><br><span class="line">vue ui</span><br></pre></td></tr></table></figure></p>
+<p>运行成功以后会跳转到</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4e5e83ef0fce?w=1440&amp;h=900&amp;f=png&amp;s=79853" alt=""><br>选择你要建立项目的磁盘路径，然后点击最下面的按钮，填写项目的基本信息</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4e70c23da0dd?w=1440&amp;h=900&amp;f=png&amp;s=97555" alt=""><br>到下一步的话会让你选择一些项目依赖，如果是第一次建立的话，可以选择Manual然后选择需要的依赖</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4e88dd0cb553?w=1440&amp;h=900&amp;f=png&amp;s=126923" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4e964837538a?w=1440&amp;h=900&amp;f=png&amp;s=155016" alt=""><br>接下来会让你选择eslint的相关配置，虽然eslint有时候真的是太严格了，不过养成习惯以后就会很舒服了，而且这边提供了保存和提交时自动fix的功能，所以都选上</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4ed71b9309de?w=1440&amp;h=900&amp;f=png&amp;s=104023" alt=""><br>创建完成以后，可以点击右上方的按钮直接下载想要的插件，有时候甚至会直接帮你在项目中弄好引入，省了手动写一些引入的代码</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4f197ca67aa5?w=1440&amp;h=900&amp;f=png&amp;s=105407" alt=""><br>最后就是可以直接在这边运行项目了</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4f356a18c357?w=1440&amp;h=900&amp;f=png&amp;s=166690" alt=""><br>这些只是基本搭建到运行，还有很多功能可以自己去发发掘一下。</p>
+<h4 id="vue3-0配置跨域"><a href="#vue3-0配置跨域" class="headerlink" title="vue3.0配置跨域"></a>vue3.0配置跨域</h4><p>3的话需要自己手动在根目录下建立vue.config.js，内容的话还是和以前差不多的，这里贴上我的简单的跨域配置</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c51271b4ba26b?w=1440&amp;h=900&amp;f=png&amp;s=118632" alt=""></p>
+<h4 id="egg-js"><a href="#egg-js" class="headerlink" title="egg.js"></a>egg.js</h4><p>egg的话，官网写的还是挺详细的，跟着<a href="https://eggjs.org/zh-cn/intro/quickstart.html" target="_blank" rel="noopener">快速入门</a>走一遍基本就差不多了。这里就贴上基本的连接mysql配置</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4f9a6b5a0861?w=1440&amp;h=900&amp;f=png&amp;s=134780" alt=""><br><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4f9cf38b6c72?w=1440&amp;h=900&amp;f=png&amp;s=97550" alt=""></p>
+<h4 id="腾讯云上传"><a href="#腾讯云上传" class="headerlink" title="腾讯云上传"></a>腾讯云上传</h4><p>因为涉及图片上传的相关东西，所以使用了腾讯云。先去腾讯云首页添加对象存储<br><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c4ff78c2d9dd9?w=1311&amp;h=782&amp;f=png&amp;s=216693" alt=""><br>然后创建存储桶</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c5010f928cbd7?w=1492&amp;h=726&amp;f=png&amp;s=86054" alt=""><br>然后在基础设置中配置一下cors的白名单</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c501ee9bb63a4?w=1920&amp;h=1080&amp;f=png&amp;s=199090" alt=""><br>注意这边的Expose-Headers，不设置的话到时候上传完以后的回调会没有url。  </p>
+<p>然后去这边把Secretid和SecretKey拿一下后面要用<br><img src="https://user-gold-cdn.xitu.io/2018/12/19/167c50890f83e3e4?w=1779&amp;h=922&amp;f=png&amp;s=106339" alt=""><br>项目中使用：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//安装一下</span><br><span class="line">npm install cos-js-sdk-v5 -S</span><br><span class="line"></span><br><span class="line">//在需要上传的文件中</span><br><span class="line">import COS from &quot;cos-js-sdk-v5&quot;;</span><br><span class="line"></span><br><span class="line">this.myCos = new COS(&#123;</span><br><span class="line">      SecretId: &quot;你的id&quot;,</span><br><span class="line">      SecretKey: &quot;你的key&quot;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">//在获取到上传文件对象后</span><br><span class="line">this.myCos.putObject(</span><br><span class="line">        &#123;</span><br><span class="line">          Bucket: &quot;你的存储桶空间名称&quot;,</span><br><span class="line">          Region: &quot;你的存储桶所在地域&quot;,</span><br><span class="line">          Key: e.target.files[0].name,//上传的文件名</span><br><span class="line">          StorageClass: &quot;STANDARD&quot;,</span><br><span class="line">          Body: e.target.files[0], // 上传文件对象</span><br><span class="line">          onProgress: function(progressData) &#123;</span><br><span class="line">            self.user.avator = progressData.Location;//Location就是上传完成以后的对象路径</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        function(err, data) &#123;</span><br><span class="line">          console.log(err || data);</span><br><span class="line">          console.log(data.Location);</span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br></pre></td></tr></table></figure></p>
+<h4 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h4><ol>
+<li>购买云服务器 <a href="https://cloud.tencent.com/act/campus" target="_blank" rel="noopener">https://cloud.tencent.com/act/campus</a> 加购域名(很便宜的那种几十块)</li>
+<li>解析域名 可直接选 新手快速添加</li>
+<li>登陆服务器配置环境<br>安装wget yum install -y wget</li>
+</ol>
+<p>安装node<br>wget <a href="https://nodejs.org/dist/v10.14.2/node-v10.14.2-darwin-x64.tar.gz" target="_blank" rel="noopener">https://nodejs.org/dist/v10.14.2/node-v10.14.2-darwin-x64.tar.gz</a><br>解压 tar -xvf node-v10.14.2-darwin-x64.tar.gz<br>重命名 mv node-v10.14.2-darwin-x64 node<br>软连接(全局命令)<br>ln -s ~/node/bin/node /usr/bin/node<br>ln -s ~/node/bin/npm /usr/bin/npm<br>node -v<br>安装git yum –y install git<br>安装jdk yum -y install java<br>java -version<br>路径 /usr/lib/jvm<br>安装tomacat yum -y install tomcat<br>rpm -q tomcat<br>路径 /usr/share/tomcat</p>
+<p>5 环境变量</p>
+<p>vi .bashrc</p>
+<p>填入<br>JAVA_HOME=/usr/lib/jvm/java</p>
+<p>PATH=$PATH:$JAVA_HOME/bin</p>
+<p>CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</p>
+<p>CATALINA_BASE=/usr/share/tomcat</p>
+<p>CATALINA_HOME=/usr/share/tomcat</p>
+<p>export JAVA_HOME PATH CLASSPATH CATALINA_BASE CATALINA_HOME</p>
+<p>:wq保存以后</p>
+<p>source .bashrc</p>
+<p>将你的项目放到/usr/share/tomcat/webapps 下后<br>启动tomcat<br>systemctl start tomcat.service<br>查看<br>lsof -i:8080</p>
+<p>端口重定向<br>iptables -t nat -A PREROUTING -p tcp –dport 80 -j REDIRECT –to-port 8080</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/egg/">egg</a>, <a class="has-link-grey -link" href="/tags/vue/">vue</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/01/29/my-rss/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">my-rss</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/12/28/Trao开发微信小程序/">
+                <span class="level-item">taro仿网易云音乐-小程序版</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+	var gitment = new Gitment({
+		id: '2019/01/29/vue3-egg仿掘金官网/',
+		owner: 'Izayawww',
+		repo: 'my-blog',
+		oauth: {
+			client_id: 'c7dbe66520326e3c0c34',
+			client_secret: 'a577d2ba0da656e7fa22616c22f588a8d08b24c5',
+		},
+	})
+	gitment.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#已完成">
+        <span class="has-mr-6">1</span>
+        <span>已完成</span>
+        </a></li><li>
+        <a class="is-flex" href="#预览">
+        <span class="has-mr-6">2</span>
+        <span>预览</span>
+        </a></li><li>
+        <a class="is-flex" href="#项目包含">
+        <span class="has-mr-6">3</span>
+        <span>项目包含</span>
+        </a></li><li>
+        <a class="is-flex" href="#项目搭建">
+        <span class="has-mr-6">4</span>
+        <span>项目搭建</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#vue3-0">
+        <span class="has-mr-6">4.1</span>
+        <span>vue3.0</span>
+        </a></li><li>
+        <a class="is-flex" href="#vue3-0配置跨域">
+        <span class="has-mr-6">4.2</span>
+        <span>vue3.0配置跨域</span>
+        </a></li><li>
+        <a class="is-flex" href="#egg-js">
+        <span class="has-mr-6">4.3</span>
+        <span>egg.js</span>
+        </a></li><li>
+        <a class="is-flex" href="#腾讯云上传">
+        <span class="has-mr-6">4.4</span>
+        <span>腾讯云上传</span>
+        </a></li><li>
+        <a class="is-flex" href="#服务器">
+        <span class="has-mr-6">4.5</span>
+        <span>服务器</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/egg/">
+                        <span class="tag">egg</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/electron/">
+                        <span class="tag">electron</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/taro/">
+                        <span class="tag">taro</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue/">
+                        <span class="tag">vue</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue-rss/">
+                        <span class="tag">vue,rss</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/小程序/">
+                        <span class="tag">小程序</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/知识/">
+                        <span class="tag">知识</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/简历/">
+                        <span class="tag">简历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/head.png" alt="Izaya Wang">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Izaya Wang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Izaya&#39;s blog
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>浙江杭州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        9
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Izayawww">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/Izayawww">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/Izayawwww">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/my-rss/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/rss.svg" alt="my-rss">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:41:15.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/my-rss/" class="has-link-black-ter is-size-6">my-rss</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/vue3-egg仿掘金官网/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/juejin.svg" alt="vue3+egg仿掘金官网">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:40:38.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/vue3-egg仿掘金官网/" class="has-link-black-ter is-size-6">vue3+egg仿掘金官网</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/28/Trao开发微信小程序/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/taro.jpg" alt="taro仿网易云音乐-小程序版">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-28T03:32:31.000Z">2018-12-28</time></div>
+                    <a href="/2018/12/28/Trao开发微信小程序/" class="has-link-black-ter is-size-6">taro仿网易云音乐-小程序版</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/10/vue/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/Vue.svg" alt="vue">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-10T00:58:25.257Z">2018-12-10</time></div>
+                    <a href="/2018/12/10/vue/" class="has-link-black-ter is-size-6">vue</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/知识/">知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/elevue.png" alt="electron-vue仿网易云音乐桌面应用">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-05T11:48:07.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="has-link-black-ter is-size-6">electron-vue仿网易云音乐桌面应用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://juejin.im/user/59dc784c51882578d640993d" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">掘金</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">juejin.im</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/head.png" alt="Izaya Wang">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Izaya Wang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Izaya&#39;s blog
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>浙江杭州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        9
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Izayawww">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/Izayawww">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/Izayawwww">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/my-rss/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/rss.svg" alt="my-rss">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:41:15.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/my-rss/" class="has-link-black-ter is-size-6">my-rss</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/vue3-egg仿掘金官网/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/juejin.svg" alt="vue3+egg仿掘金官网">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:40:38.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/vue3-egg仿掘金官网/" class="has-link-black-ter is-size-6">vue3+egg仿掘金官网</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/28/Trao开发微信小程序/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/taro.jpg" alt="taro仿网易云音乐-小程序版">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-28T03:32:31.000Z">2018-12-28</time></div>
+                    <a href="/2018/12/28/Trao开发微信小程序/" class="has-link-black-ter is-size-6">taro仿网易云音乐-小程序版</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/10/vue/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/Vue.svg" alt="vue">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-10T00:58:25.257Z">2018-12-10</time></div>
+                    <a href="/2018/12/10/vue/" class="has-link-black-ter is-size-6">vue</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/知识/">知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/elevue.png" alt="electron-vue仿网易云音乐桌面应用">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-05T11:48:07.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="has-link-black-ter is-size-6">electron-vue仿网易云音乐桌面应用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://juejin.im/user/59dc784c51882578d640993d" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">掘金</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">juejin.im</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/head.png" alt="vue3+egg仿掘金官网" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Izaya&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/Izayawww">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

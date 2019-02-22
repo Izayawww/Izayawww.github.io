@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>微信小程序github可视化 - Izaya&#39;s blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="一直想做一些数据可视化的东西，所以就尝试在微信小程序中获取用户的一些GitHub上的数据以后，使用[wx-charts]">
+<meta name="keywords" content="小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序github可视化">
+<meta property="og:url" content="http://yoursite.com/2018/09/07/微信小程序github可视化/index.html">
+<meta property="og:site_name" content="Izaya&#39;s blog">
+<meta property="og:description" content="一直想做一些数据可视化的东西，所以就尝试在微信小程序中获取用户的一些GitHub上的数据以后，使用[wx-charts]">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/9/7/165b24bf9e8c67fd?w=425&h=746&f=gif&s=998855">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/9/6/165aef0156f40807?w=264&h=284&f=png&s=10629">
+<meta property="og:updated_time" content="2019-02-22T06:59:02.773Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序github可视化">
+<meta name="twitter:description" content="一直想做一些数据可视化的东西，所以就尝试在微信小程序中获取用户的一些GitHub上的数据以后，使用[wx-charts]">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/9/7/165b24bf9e8c67fd?w=425&h=746&f=gif&s=998855">
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/head.png" alt="微信小程序github可视化" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/categories">分类</a>
+                
+                <a class="navbar-item" href="/tags">标签</a>
+                
+                <a class="navbar-item" href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/Izayawww">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/img/github.svg" alt="微信小程序github可视化">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-09-07T04:37:40.000Z">2018-09-07</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 分钟 读完 (大约 480 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                微信小程序github可视化
+            
+        </h1>
+        <div class="content">
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>一直想做一些数据可视化的东西，所以就尝试在微信小程序中获取用户的一些GitHub上的数据以后，使用<a href="https://github.com/xiaolin3303/wx-charts" target="_blank" rel="noopener">wx-charts</a>来进行开发，GitHub的api可参考<a href="https://segmentfault.com/a/1190000015144126" target="_blank" rel="noopener">GitHubApi</a>，目前只是获取了数据暂时展示了一下，样式请忽略😁，项目持续更新。<br><a id="more"></a></p>
+<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><p>暂时完成了：<br>18/09/06</p>
+<ul>
+<li>following</li>
+<li>follows</li>
+<li>repositories和starts</li>
+<li>仓库的语言类型  </li>
+</ul>
+<p>18/09/07</p>
+<ul>
+<li>返回重输</li>
+<li>输入为空和成功的优化</li>
+<li>点击跟随人跳转进相应人信息</li>
+<li>点击环形图弹出对应信息<h3 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h3></li>
+</ul>
+<p><a href="https://github.com/Izayawww/wx-gitinfo" target="_blank" rel="noopener">git地址</a></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/9/7/165b24bf9e8c67fd?w=425&amp;h=746&amp;f=gif&amp;s=998855" alt=""></p>
+<h3 id="所用"><a href="#所用" class="headerlink" title="所用"></a>所用</h3><p><a href="https://github.com/xiaolin3303/wx-charts" target="_blank" rel="noopener">wx-charts</a>：去<a href="https://github.com/xiaolin3303/wx-charts/blob/master/dist/wxcharts.js" target="_blank" rel="noopener">这里</a>直接复制到你的项目随便哪里，在需要引用的地方 <code>var wxCharts = require(&#39;../../utils/wxcharts.js&#39;);</code> ，例子都在他<a href="https://github.com/xiaolin3303/wx-charts-demo" target="_blank" rel="noopener">官网</a>,需要下载到小程序中看效果，这里就展示一个饼图的基本代码：<br>index.wxml:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;canvas canvas-id=&quot;pieCanvas&quot; class=&quot;canvas&quot; style=&quot;height:300px;width:100%;&quot;&gt;&lt;/canvas&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure></p>
+<p>index.js<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var windowWidth = 320;</span><br><span class="line">try &#123;</span><br><span class="line">  var res = wx.getSystemInfoSync();</span><br><span class="line">  windowWidth = res.windowWidth;</span><br><span class="line">&#125; catch (e) &#123;</span><br><span class="line">  console.error(&apos;getSystemInfoSync failed!&apos;);</span><br><span class="line">&#125;</span><br><span class="line">new wxCharts(&#123;</span><br><span class="line">  animation: true,</span><br><span class="line">  canvasId: &apos;pieCanvas&apos;,</span><br><span class="line">  type: &apos;pie&apos;,</span><br><span class="line">  series: [&#123;</span><br><span class="line">    name: &apos;javascript&apos;,</span><br><span class="line">    data: 3</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: &apos;java&apos;,</span><br><span class="line">    data: 1</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: &apos;vue&apos;,</span><br><span class="line">    data: 6</span><br><span class="line">  &#125;],</span><br><span class="line">  width: windowWidth,</span><br><span class="line">  height: 300,</span><br><span class="line">  dataLabel: true,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br><img src="https://user-gold-cdn.xitu.io/2018/9/6/165aef0156f40807?w=264&amp;h=284&amp;f=png&amp;s=10629" alt=""><br><a href="https://segmentfault.com/a/1190000015144126" target="_blank" rel="noopener">GitHubApi</a>：这里别人总结的github的api的一些用法，感谢！（api的请求次数有限制，如果自己在开发时需要经常请求，可以把一次请求的数据暂时存起来）<br>weui-wexx：去<a href="https://github.com/Tencent/weui-wxss/blob/master/dist/style/weui.wxss" target="_blank" rel="noopener">这里</a>直接复制到你的项目根目录下取名weui.wxss，然后在app.wxss中 <code>@import &#39;weui.wxss&#39;</code>就好了，具体使用还是要去看他的<a href="https://github.com/Tencent/weui-wxss" target="_blank" rel="noopener">官网</a></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/小程序/">小程序</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/05/electron-vue仿网易云音乐桌面应用/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">electron-vue仿网易云音乐桌面应用</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/09/04/mpvue微信小程序-仿网易云音乐/">
+                <span class="level-item">mpvue微信小程序-仿网易云音乐</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+	var gitment = new Gitment({
+		id: '2018/09/07/微信小程序github可视化/',
+		owner: 'Izayawww',
+		repo: 'my-blog',
+		oauth: {
+			client_id: 'c7dbe66520326e3c0c34',
+			client_secret: 'a577d2ba0da656e7fa22616c22f588a8d08b24c5',
+		},
+	})
+	gitment.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#前言">
+        <span class="has-mr-6">1</span>
+        <span>前言</span>
+        </a></li><li>
+        <a class="is-flex" href="#完成">
+        <span class="has-mr-6">2</span>
+        <span>完成</span>
+        </a></li><li>
+        <a class="is-flex" href="#预览">
+        <span class="has-mr-6">3</span>
+        <span>预览</span>
+        </a></li><li>
+        <a class="is-flex" href="#所用">
+        <span class="has-mr-6">4</span>
+        <span>所用</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/egg/">
+                        <span class="tag">egg</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/electron/">
+                        <span class="tag">electron</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/taro/">
+                        <span class="tag">taro</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue/">
+                        <span class="tag">vue</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue-rss/">
+                        <span class="tag">vue,rss</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/小程序/">
+                        <span class="tag">小程序</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/知识/">
+                        <span class="tag">知识</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/简历/">
+                        <span class="tag">简历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/head.png" alt="Izaya Wang">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Izaya Wang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Izaya&#39;s blog
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>浙江杭州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        9
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Izayawww">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/Izayawww">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/Izayawwww">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/my-rss/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/rss.svg" alt="my-rss">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:41:15.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/my-rss/" class="has-link-black-ter is-size-6">my-rss</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/vue3-egg仿掘金官网/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/juejin.svg" alt="vue3+egg仿掘金官网">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:40:38.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/vue3-egg仿掘金官网/" class="has-link-black-ter is-size-6">vue3+egg仿掘金官网</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/28/Trao开发微信小程序/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/taro.jpg" alt="taro仿网易云音乐-小程序版">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-28T03:32:31.000Z">2018-12-28</time></div>
+                    <a href="/2018/12/28/Trao开发微信小程序/" class="has-link-black-ter is-size-6">taro仿网易云音乐-小程序版</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/10/vue/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/Vue.svg" alt="vue">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-10T00:58:25.257Z">2018-12-10</time></div>
+                    <a href="/2018/12/10/vue/" class="has-link-black-ter is-size-6">vue</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/知识/">知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/elevue.png" alt="electron-vue仿网易云音乐桌面应用">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-05T11:48:07.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="has-link-black-ter is-size-6">electron-vue仿网易云音乐桌面应用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://juejin.im/user/59dc784c51882578d640993d" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">掘金</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">juejin.im</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/head.png" alt="Izaya Wang">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Izaya Wang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Izaya&#39;s blog
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>浙江杭州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        9
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Izayawww">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/Izayawww">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/Izayawwww">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/my-rss/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/rss.svg" alt="my-rss">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:41:15.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/my-rss/" class="has-link-black-ter is-size-6">my-rss</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/vue3-egg仿掘金官网/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/juejin.svg" alt="vue3+egg仿掘金官网">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:40:38.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/vue3-egg仿掘金官网/" class="has-link-black-ter is-size-6">vue3+egg仿掘金官网</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/28/Trao开发微信小程序/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/taro.jpg" alt="taro仿网易云音乐-小程序版">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-28T03:32:31.000Z">2018-12-28</time></div>
+                    <a href="/2018/12/28/Trao开发微信小程序/" class="has-link-black-ter is-size-6">taro仿网易云音乐-小程序版</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/10/vue/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/Vue.svg" alt="vue">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-10T00:58:25.257Z">2018-12-10</time></div>
+                    <a href="/2018/12/10/vue/" class="has-link-black-ter is-size-6">vue</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/知识/">知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/elevue.png" alt="electron-vue仿网易云音乐桌面应用">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-05T11:48:07.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="has-link-black-ter is-size-6">electron-vue仿网易云音乐桌面应用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://juejin.im/user/59dc784c51882578d640993d" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">掘金</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">juejin.im</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/head.png" alt="微信小程序github可视化" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Izaya&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/Izayawww">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

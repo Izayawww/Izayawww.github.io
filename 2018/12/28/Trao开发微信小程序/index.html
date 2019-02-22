@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>taro仿网易云音乐-小程序版 - Izaya&#39;s blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="用taro开发的一个比较完整的小程序版网易云音乐">
+<meta name="keywords" content="小程序,vue,taro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="taro仿网易云音乐-小程序版">
+<meta property="og:url" content="http://yoursite.com/2018/12/28/Trao开发微信小程序/index.html">
+<meta property="og:site_name" content="Izaya&#39;s blog">
+<meta property="og:description" content="用taro开发的一个比较完整的小程序版网易云音乐">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/3/16774b00e557ba87?w=411&h=717&f=gif&s=459643">
+<meta property="og:image" content="https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/9566690551f6ad0338443546913e106.jpg">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/12/30/167fdd71537dc46f?w=375&h=667&f=png&s=264403">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/3/168131b237b3639e?w=263&h=453&f=png&s=133132">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/3/16813185b32261c9?w=278&h=476&f=png&s=118548">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/3/1681316eb2970f81?w=381&h=655&f=png&s=153742">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/4/168180fc9230762e?w=325&h=580&f=png&s=283632">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/4/168180ef8805435c?w=324&h=580&f=png&s=185205">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/2/166d3cc0398e3569?w=130&h=144&f=png&s=7982">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/2/166d3ccb49b2334c?w=301&h=272&f=png&s=11194">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/2/166d3cdb83b43cdf?w=575&h=299&f=png&s=26167">
+<meta property="og:updated_time" content="2019-02-22T06:56:45.836Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="taro仿网易云音乐-小程序版">
+<meta name="twitter:description" content="用taro开发的一个比较完整的小程序版网易云音乐">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/12/3/16774b00e557ba87?w=411&h=717&f=gif&s=459643">
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/head.png" alt="taro仿网易云音乐-小程序版" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/categories">分类</a>
+                
+                <a class="navbar-item" href="/tags">标签</a>
+                
+                <a class="navbar-item" href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/Izayawww">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/img/taro.jpg" alt="taro仿网易云音乐-小程序版">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-12-28T03:32:31.000Z">2018-12-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 分钟 读完 (大约 1095 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                taro仿网易云音乐-小程序版
+            
+        </h1>
+        <div class="content">
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前段时间用mpvue开发过一个仿网易云音乐的微信小程序(<a href="https://github.com/lucaswww/my-project" target="_blank" rel="noopener">链接</a>)，但似乎mpvue好像是不再维护了，偶然得知有个<a href="https://nervjs.github.io/taro/docs/README.html" target="_blank" rel="noopener">Taro</a>也可以开发小程序，但是用的是<a href="https://react.docschina.org/docs/hello-world.html" target="_blank" rel="noopener">React</a>，正好也想了解了解React,所以体验了一下Taro。<a href="https://github.com/lucaswww/my-taro" target="_blank" rel="noopener">git地址</a><br><a id="more"></a></p>
+<h3 id="体验版预览"><a href="#体验版预览" class="headerlink" title="体验版预览"></a>体验版预览</h3><p><img src="https://user-gold-cdn.xitu.io/2018/12/3/16774b00e557ba87?w=411&amp;h=717&amp;f=gif&amp;s=459643" alt=""><br>· 18/12/28 歌单详情页面<br><img src="https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/9566690551f6ad0338443546913e106.jpg" alt=""><br>· 18/12/30 播放页面1.0(还没加入歌词)<br><img src="https://user-gold-cdn.xitu.io/2018/12/30/167fdd71537dc46f?w=375&amp;h=667&amp;f=png&amp;s=264403" alt=""><br>· 19/01/02 播放页面2.0<br><img src="https://user-gold-cdn.xitu.io/2019/1/3/168131b237b3639e?w=263&amp;h=453&amp;f=png&amp;s=133132" alt=""><br>· 19/01/03 个人页面<br><img src="https://user-gold-cdn.xitu.io/2019/1/3/16813185b32261c9?w=278&amp;h=476&amp;f=png&amp;s=118548" alt=""><br>· 19/01/03 每日推荐<br><img src="https://user-gold-cdn.xitu.io/2019/1/3/1681316eb2970f81?w=381&amp;h=655&amp;f=png&amp;s=153742" alt=""><br>· 19/01/04 热门歌单、精品歌单<br><img src="https://user-gold-cdn.xitu.io/2019/1/4/168180fc9230762e?w=325&amp;h=580&amp;f=png&amp;s=283632" alt=""><br><img src="https://user-gold-cdn.xitu.io/2019/1/4/168180ef8805435c?w=324&amp;h=580&amp;f=png&amp;s=185205" alt="">  </p>
+<h3 id="Taro简介"><a href="#Taro简介" class="headerlink" title="Taro简介"></a>Taro简介</h3><p>Taro 是一套遵循 React 语法规范的 多端开发 解决方案。使用 Taro，我们可以只书写一套代码，再通过 Taro 的编译工具，将源代码分别编译出可以在不同端（微信小程序、H5、RN 等）运行的代码，组件可以使用Taro的Taro-ui。(摘至<a href="https://nervjs.github.io/taro/docs/README.html" target="_blank" rel="noopener">官网</a>)</p>
+<h3 id="Taro-ui"><a href="#Taro-ui" class="headerlink" title="Taro-ui"></a>Taro-ui</h3><p><a href="https://taro-ui.aotu.io/#/docs/quickstart" target="_blank" rel="noopener">Taro-ui</a>是一款基于 Taro 框架开发的多端 UI 组件库,里面的一些组件还是挺好用的，也挺好看的，官网很详细而且还有效果图提供观看和体验。</p>
+<h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><p><a href="https://react.docschina.org/docs/hello-world.html" target="_blank" rel="noopener">React</a>的话跟着官网走一遍基本就能开发了，看了react以后还是觉得自己喜欢vue多一点(😂)</p>
+<h3 id="项目流程"><a href="#项目流程" class="headerlink" title="项目流程"></a>项目流程</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @tarojs/cli</span><br><span class="line">taro init myApp</span><br><span class="line">npm run dev:weapp</span><br></pre></td></tr></table></figure>
+<h3 id="开发小程序注意事项"><a href="#开发小程序注意事项" class="headerlink" title="开发小程序注意事项"></a>开发小程序注意事项</h3><p>（摘自官网）若使用 微信小程序预览模式 ，则需下载并使用<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html?t=18112721" target="_blank" rel="noopener">微信开发者工具</a>添加项目进行预览，此时需要注意微信开发者工具的项目设置</p>
+<ul>
+<li>需要设置关闭 ES6 转 ES5 功能，开启可能报错</li>
+<li>需要设置关闭上传代码时样式自动补全，开启可能报错</li>
+<li>需要设置关闭代码压缩上传，开启可能报错<br>还有一些其他问题需要注意的，<a href="https://nervjs.github.io/taro/docs/before-dev-remind.html" target="_blank" rel="noopener">这里</a>基本都指出了，我在实际开发中好像也没遇到过里面提及过的问题(😂)</li>
+</ul>
+<h3 id="开发相关"><a href="#开发相关" class="headerlink" title="开发相关"></a>开发相关</h3><p> app.js对应的就是小程序的app.json一些基本配置可以在这里完成，比如tarBar<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&quot;tabBar&quot;: &#123;</span><br><span class="line">   &quot;list&quot;: [</span><br><span class="line">     &#123;</span><br><span class="line">       &quot;text&quot;: &quot;音乐&quot;,</span><br><span class="line">       &quot;pagePath&quot;: &quot;pages/music/music&quot;,</span><br><span class="line">       &quot;iconPath&quot;: &quot;./img/music.png&quot;,</span><br><span class="line">       &quot;selectedIconPath&quot;: &quot;./img/music.png&quot;</span><br><span class="line">     &#125;,</span><br><span class="line">     &#123;</span><br><span class="line">       &quot;text&quot;: &quot;电影&quot;,</span><br><span class="line">       &quot;pagePath&quot;: &quot;pages/index/index&quot;,</span><br><span class="line">       &quot;iconPath&quot;: &quot;./img/movie.png&quot;,</span><br><span class="line">       &quot;selectedIconPath&quot;: &quot;./img/movie.png&quot;</span><br><span class="line">     &#125;</span><br><span class="line">   ]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="路由和传值"><a href="#路由和传值" class="headerlink" title="路由和传值"></a>路由和传值</h4> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//可使用Taro的</span><br><span class="line">Taro.navigateTo(&#123;url:&apos;/pages/some?tag=tags&apos;&#125;)</span><br><span class="line">//或者</span><br><span class="line">&lt;Navigator url=&quot;/pages/some?tag=tags&quot;&gt;更多&lt;/Navigator&gt;</span><br><span class="line">//获取时使用</span><br><span class="line">this.$router.params.tag</span><br></pre></td></tr></table></figure>
+<h4 id="引用iconfont"><a href="#引用iconfont" class="headerlink" title="引用iconfont"></a>引用iconfont</h4><p>先去<a href="http://www.iconfont.cn/" target="_blank" rel="noopener">iconfont</a>官网选择你想要的icon，</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/2/166d3cc0398e3569?w=130&amp;h=144&amp;f=png&amp;s=7982" alt=""><br>选择添加到你自己的项目<br><img src="https://user-gold-cdn.xitu.io/2018/11/2/166d3ccb49b2334c?w=301&amp;h=272&amp;f=png&amp;s=11194" alt=""><br><img src="https://user-gold-cdn.xitu.io/2018/11/2/166d3cdb83b43cdf?w=575&amp;h=299&amp;f=png&amp;s=26167" alt=""><br>复制上面的代码在浏览器里打开(前面记得加https:)，<br>然后在自己的项目中src目录下新建一个icon.scss名字随意css也行，复制在浏览器打开以后的内容粘贴进去，最后在app.tsc中import ‘./icon.scss’<br>使用<code>&lt;Text class=&quot;iconfont icon-play-circle&quot;&gt;&lt;/Text&gt;</code></p>
+<h4 id="父子组件"><a href="#父子组件" class="headerlink" title="父子组件"></a>父子组件</h4><p> 在其他地方写好子组件后，父组件内直接<br> import就行，传值的话直接在引用子组件时写入需要传递的数据即可<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Child dataname=&#123;somedata&#125; /&gt;</span><br><span class="line">//在子组件中使用</span><br><span class="line">this.props.dataname即可获取传递过来的数据</span><br></pre></td></tr></table></figure></p>
+<h4 id="获取setState以后的值"><a href="#获取setState以后的值" class="headerlink" title="获取setState以后的值"></a>获取setState以后的值</h4><p> 在开发过程中发现不能直接获取setState以后的值，因为 this.state 和 props 一定是异步更新的，所以不能在 setState 后马上拿到 state 的值，正确做法是<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.setState(&#123;</span><br><span class="line">  somedata: 1</span><br><span class="line">&#125;, () =&gt; &#123;</span><br><span class="line">  // 在这个函数内你可以拿到 setState 之后的值</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/taro/">taro</a>, <a class="has-link-grey -link" href="/tags/vue/">vue</a>, <a class="has-link-grey -link" href="/tags/小程序/">小程序</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/01/29/vue3-egg仿掘金官网/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">vue3+egg仿掘金官网</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/12/10/vue/">
+                <span class="level-item">vue</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+	var gitment = new Gitment({
+		id: '2018/12/28/Trao开发微信小程序/',
+		owner: 'Izayawww',
+		repo: 'my-blog',
+		oauth: {
+			client_id: 'c7dbe66520326e3c0c34',
+			client_secret: 'a577d2ba0da656e7fa22616c22f588a8d08b24c5',
+		},
+	})
+	gitment.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#前言">
+        <span class="has-mr-6">1</span>
+        <span>前言</span>
+        </a></li><li>
+        <a class="is-flex" href="#体验版预览">
+        <span class="has-mr-6">2</span>
+        <span>体验版预览</span>
+        </a></li><li>
+        <a class="is-flex" href="#Taro简介">
+        <span class="has-mr-6">3</span>
+        <span>Taro简介</span>
+        </a></li><li>
+        <a class="is-flex" href="#Taro-ui">
+        <span class="has-mr-6">4</span>
+        <span>Taro-ui</span>
+        </a></li><li>
+        <a class="is-flex" href="#React">
+        <span class="has-mr-6">5</span>
+        <span>React</span>
+        </a></li><li>
+        <a class="is-flex" href="#项目流程">
+        <span class="has-mr-6">6</span>
+        <span>项目流程</span>
+        </a></li><li>
+        <a class="is-flex" href="#开发小程序注意事项">
+        <span class="has-mr-6">7</span>
+        <span>开发小程序注意事项</span>
+        </a></li><li>
+        <a class="is-flex" href="#开发相关">
+        <span class="has-mr-6">8</span>
+        <span>开发相关</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#路由和传值">
+        <span class="has-mr-6">8.1</span>
+        <span>路由和传值</span>
+        </a></li><li>
+        <a class="is-flex" href="#引用iconfont">
+        <span class="has-mr-6">8.2</span>
+        <span>引用iconfont</span>
+        </a></li><li>
+        <a class="is-flex" href="#父子组件">
+        <span class="has-mr-6">8.3</span>
+        <span>父子组件</span>
+        </a></li><li>
+        <a class="is-flex" href="#获取setState以后的值">
+        <span class="has-mr-6">8.4</span>
+        <span>获取setState以后的值</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/egg/">
+                        <span class="tag">egg</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/electron/">
+                        <span class="tag">electron</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/taro/">
+                        <span class="tag">taro</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue/">
+                        <span class="tag">vue</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vue-rss/">
+                        <span class="tag">vue,rss</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/小程序/">
+                        <span class="tag">小程序</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/知识/">
+                        <span class="tag">知识</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/简历/">
+                        <span class="tag">简历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/head.png" alt="Izaya Wang">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Izaya Wang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Izaya&#39;s blog
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>浙江杭州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        9
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Izayawww">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/Izayawww">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/Izayawwww">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/my-rss/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/rss.svg" alt="my-rss">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:41:15.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/my-rss/" class="has-link-black-ter is-size-6">my-rss</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/vue3-egg仿掘金官网/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/juejin.svg" alt="vue3+egg仿掘金官网">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:40:38.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/vue3-egg仿掘金官网/" class="has-link-black-ter is-size-6">vue3+egg仿掘金官网</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/28/Trao开发微信小程序/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/taro.jpg" alt="taro仿网易云音乐-小程序版">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-28T03:32:31.000Z">2018-12-28</time></div>
+                    <a href="/2018/12/28/Trao开发微信小程序/" class="has-link-black-ter is-size-6">taro仿网易云音乐-小程序版</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/10/vue/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/Vue.svg" alt="vue">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-10T00:58:25.257Z">2018-12-10</time></div>
+                    <a href="/2018/12/10/vue/" class="has-link-black-ter is-size-6">vue</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/知识/">知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/elevue.png" alt="electron-vue仿网易云音乐桌面应用">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-05T11:48:07.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="has-link-black-ter is-size-6">electron-vue仿网易云音乐桌面应用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://juejin.im/user/59dc784c51882578d640993d" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">掘金</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">juejin.im</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="https://izaya-1256042946.cos.ap-chengdu.myqcloud.com/head.png" alt="Izaya Wang">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Izaya Wang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Izaya&#39;s blog
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>浙江杭州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        9
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Izayawww">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/Izayawww">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com/Izayawwww">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/my-rss/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/rss.svg" alt="my-rss">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:41:15.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/my-rss/" class="has-link-black-ter is-size-6">my-rss</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/29/vue3-egg仿掘金官网/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/juejin.svg" alt="vue3+egg仿掘金官网">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-29T06:40:38.000Z">2019-01-29</time></div>
+                    <a href="/2019/01/29/vue3-egg仿掘金官网/" class="has-link-black-ter is-size-6">vue3+egg仿掘金官网</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/28/Trao开发微信小程序/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/taro.jpg" alt="taro仿网易云音乐-小程序版">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-28T03:32:31.000Z">2018-12-28</time></div>
+                    <a href="/2018/12/28/Trao开发微信小程序/" class="has-link-black-ter is-size-6">taro仿网易云音乐-小程序版</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/10/vue/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/Vue.svg" alt="vue">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-10T00:58:25.257Z">2018-12-10</time></div>
+                    <a href="/2018/12/10/vue/" class="has-link-black-ter is-size-6">vue</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/知识/">知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/elevue.png" alt="electron-vue仿网易云音乐桌面应用">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-05T11:48:07.000Z">2018-11-05</time></div>
+                    <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="has-link-black-ter is-size-6">electron-vue仿网易云音乐桌面应用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://juejin.im/user/59dc784c51882578d640993d" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">掘金</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">juejin.im</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/head.png" alt="taro仿网易云音乐-小程序版" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Izaya&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/Izayawww">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
