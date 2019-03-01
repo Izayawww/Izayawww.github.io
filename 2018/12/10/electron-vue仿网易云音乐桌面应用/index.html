@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/2/166d3cc0398e3569?w=130&h=144&f=png&s=7982">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/2/166d3ccb49b2334c?w=301&h=272&f=png&s=11194">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/2/166d3cdb83b43cdf?w=575&h=299&f=png&s=26167">
-<meta property="og:updated_time" content="2019-03-01T02:22:37.928Z">
+<meta property="og:updated_time" content="2019-03-01T09:42:06.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="electron-vue仿网易云音乐桌面应用">
 <meta name="twitter:description" content="electron-vue仿网易云音乐桌面应用">
@@ -172,7 +172,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 分钟 读完 (大约 942 个字)
+                    7 分钟 读完 (大约 1105 个字)
                 </span>
                 
                 
@@ -201,9 +201,10 @@
 <h4 id="electron-builder"><a href="#electron-builder" class="headerlink" title="electron-builder"></a>electron-builder</h4><p>如果你正在寻找完整的安装程序、自动更新的支持、使用 Travis CI 和 AppVeyor 的 CI 构建、或本机 node 模块的自动重建，那么你会需要 electron-builder。  </p>
 <h4 id="还是根据自己的需要选择"><a href="#还是根据自己的需要选择" class="headerlink" title="还是根据自己的需要选择"></a>还是根据自己的需要选择</h4><p><img src="https://user-gold-cdn.xitu.io/2018/11/2/166d3bd60782fe48?w=563&amp;h=230&amp;f=png&amp;s=39591" alt=""><br>这些完成以后就可以像开发vue一样去开发项目了。  </p>
 <h3 id="插件方面"><a href="#插件方面" class="headerlink" title="插件方面"></a>插件方面</h3><p>electron-vue中也是能使用前端的ui组件的，以element-ui为例<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm i element-ui -S</span><br><span class="line">然后在main.js中引入</span><br><span class="line">import ElementUI from &apos;element-ui&apos;;</span><br><span class="line">import &apos;element-ui/lib/theme-chalk/index.css&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(ElementUI);</span><br></pre></td></tr></table></figure></p>
-<h3 id="electron-1"><a href="#electron-1" class="headerlink" title="electron"></a>electron</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">一点自己的配置</span><br><span class="line">mainWindow = new BrowserWindow(&#123;</span><br><span class="line">    height: 670,//窗口高度</span><br><span class="line">    width: 1000,//窗口宽度</span><br><span class="line">    frame: true,//是否显示窗口边框</span><br><span class="line">    resizable: false,//可否缩放</span><br><span class="line">    movable: true//可否移动</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="electron-1"><a href="#electron-1" class="headerlink" title="electron"></a>electron</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">一点自己的配置</span><br><span class="line">mainWindow = new BrowserWindow(&#123;</span><br><span class="line">    height: 670,//窗口高度</span><br><span class="line">    width: 1000,//窗口宽度</span><br><span class="line">    frame: false,//是否显示窗口边框</span><br><span class="line">    resizable: false,//可否缩放</span><br><span class="line">    movable: false//可否移动</span><br><span class="line">  &#125;)</span><br><span class="line">//设置不可移动以后</span><br><span class="line">单独在组件中在设置某个区域可移动，添加</span><br><span class="line">  -webkit-app-region: drag;</span><br><span class="line">//自定义边框以后使用</span><br><span class="line">  //组件中</span><br><span class="line">  const &#123; ipcRenderer: ipc &#125; = require(&quot;electron&quot;);</span><br><span class="line"></span><br><span class="line">  &lt;span @click=&quot;send(&apos;close&apos;)&quot;&gt;×&lt;/span&gt;</span><br><span class="line">  </span><br><span class="line">  send(type) &#123;</span><br><span class="line">      ipc.send(type);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // src/main/index.js</span><br><span class="line"></span><br><span class="line">  import &#123; app, BrowserWindow, ipcMain &#125; from &apos;electron&apos;</span><br><span class="line">  ipcMain.on(&apos;min&apos;, e=&gt; mainWindow.minimize());</span><br><span class="line">  ipcMain.on(&apos;max&apos;, e=&gt; mainWindow.maximize());</span><br><span class="line">  ipcMain.on(&apos;close&apos;, e=&gt; mainWindow.minimize());</span><br></pre></td></tr></table></figure>
 <h3 id="iconfont"><a href="#iconfont" class="headerlink" title="iconfont"></a>iconfont</h3><p>element的icon可能并不能满足我们的需求，这时候可以选择使用阿里的iconfont。<br>先去<a href="http://www.iconfont.cn/" target="_blank" rel="noopener">iconfont</a>官网选择你想要的icon，</p>
 <p><img src="https://user-gold-cdn.xitu.io/2018/11/2/166d3cc0398e3569?w=130&amp;h=144&amp;f=png&amp;s=7982" alt=""><br>选择添加到你自己的项目<br><img src="https://user-gold-cdn.xitu.io/2018/11/2/166d3ccb49b2334c?w=301&amp;h=272&amp;f=png&amp;s=11194" alt=""><br>然后可以在自己的项目中选择生成，复制代码到electron-vue项目的index.ejs中，正常引用css<br><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;//at.alicdn.com/t/font_883876_bfzwywhpal.css&quot;&gt;</code><br>使用<code>&lt;i class=&quot;iconfont icon-play-circle&quot;&gt;&lt;/i&gt;</code><br><img src="https://user-gold-cdn.xitu.io/2018/11/2/166d3cdb83b43cdf?w=575&amp;h=299&amp;f=png&amp;s=26167" alt=""></p>
+<h3 id="scss全局引入"><a href="#scss全局引入" class="headerlink" title="scss全局引入"></a>scss全局引入</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">新建 src/renderer/globals.scss</span><br><span class="line">$brand-primary: blue;</span><br><span class="line"></span><br><span class="line">然后在 .electron-vue/webpack.renderer.config.js 里编辑 vue-loader 的配置</span><br><span class="line">sass: &apos;vue-style-loader!css-loader!sass-loader?indentedSyntax=1&amp;data=@import &quot;./src/renderer/globals&quot;&apos;,</span><br><span class="line">scss: &apos;vue-style-loader!css-loader!sass-loader?data=@import &quot;./src/renderer/globals&quot;&apos;,</span><br><span class="line"></span><br><span class="line">最后修改</span><br><span class="line">&#123;</span><br><span class="line">    test: /\.scss$/,</span><br><span class="line">    use: [&apos;vue-style-loader&apos;, &apos;css-loader&apos;, &#123;</span><br><span class="line">      loader: &apos;sass-loader&apos;,</span><br><span class="line">      options: &#123;</span><br><span class="line">        data: &apos;@import &quot;./src/renderer/globals&quot;;&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">别忘了&quot;;&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p>直接使用<code>npm run build</code>就可以打包，若是要针对不同平台则按需添加参数，打包后的安装包在项目的build文件夹下</p>
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>界面是两天开发出来的。。所以某些样式不太美观。有个问题是打包以后iconfont不显示了，这个问题后面再解决一下，最直接的办法还是把它下到本地引用。</p>
 
@@ -336,12 +337,16 @@
         <span class="has-mr-6">8</span>
         <span>iconfont</span>
         </a></li><li>
-        <a class="is-flex" href="#打包">
+        <a class="is-flex" href="#scss全局引入">
         <span class="has-mr-6">9</span>
+        <span>scss全局引入</span>
+        </a></li><li>
+        <a class="is-flex" href="#打包">
+        <span class="has-mr-6">10</span>
         <span>打包</span>
         </a></li><li>
         <a class="is-flex" href="#最后">
-        <span class="has-mr-6">10</span>
+        <span class="has-mr-6">11</span>
         <span>最后</span>
         </a></li></ul>
         </div>
