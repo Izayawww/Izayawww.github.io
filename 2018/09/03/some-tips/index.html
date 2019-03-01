@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Izaya&#39;s blog">
 <meta property="og:description" content="一些知识">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-22T06:57:18.195Z">
+<meta property="og:updated_time" content="2019-02-28T06:54:48.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="some-tips">
 <meta name="twitter:description" content="一些知识">
@@ -143,7 +143,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/img/tips.svg" alt="some-tips">
+            <img class="thumbnail" src="/img/p8.jpeg" alt="some-tips">
         </span>
     </div>
     
@@ -161,7 +161,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    38 分钟 读完 (大约 5699 个字)
+                    40 分钟 读完 (大约 5998 个字)
                 </span>
                 
                 
@@ -440,6 +440,29 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
 
 3.nginx代理跨域
 </code></pre><h3 id="https简单概括"><a href="#https简单概括" class="headerlink" title="https简单概括"></a>https简单概括</h3><pre><code>HTTPS要使客户端与服务器端的通信过程得到安全保证，必须使用的对称加密算法，但是协商对称加密算法的过程，需要使用非对称加密算法来保证安全，然而直接使用非对称加密的过程本身也不安全，会有中间人篡改公钥的可能性，所以客户端与服务器不直接使用公钥，而是使用数字证书签发机构颁发的证书来保证非对称加密过程本身的安全。这样通过这些机制协商出一个对称加密算法，就此双方使用该算法进行加密解密。从而解决了客户端与服务器端之间的通信安全问题。
+</code></pre><h3 id="减少reflow-repaint"><a href="#减少reflow-repaint" class="headerlink" title="减少reflow/repaint"></a>减少reflow/repaint</h3><pre><code>1）不要一条一条地修改DOM的样式。与其这样，还不如预先定义好css的class，然后修改DOM的className。
+
+// bad
+var left = 10,
+top = 10;
+el.style.left = left + &quot;px&quot;;
+el.style.top  = top  + &quot;px&quot;;
+
+// Good
+el.className += &quot; theclassname&quot;;
+
+// Good
+el.style.cssText += &quot;; left: &quot; + left + &quot;px; top: &quot; + top + &quot;px;&quot;;
+2）把DOM离线后修改。如：
+
+    使用documentFragment 对象在内存里操作DOM
+    先把DOM给display:none(有一次reflow)，然后你想怎么改就怎么改。比如修改100次，然后再把他显示出来。
+    clone一个DOM结点到内存里，然后想怎么改就怎么改，改完后，和在线的那个的交换一下。
+3）不要把DOM结点的属性值放在一个循环里当成循环里的变量。不然这会导致大量地读写这个结点的属性。
+
+4）尽可能的修改层级比较低的DOM。当然，改变层级比较底的DOM有可能会造成大面积的reflow，但是也可能影响范围很小。
+
+5）为动画的HTML元件使用fixed或absoult的position，那么修改他们的CSS是不会reflow的。
 </code></pre>
         </div>
         
@@ -586,6 +609,10 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
         <a class="is-flex" href="#https简单概括">
         <span class="has-mr-6">18</span>
         <span>https简单概括</span>
+        </a></li><li>
+        <a class="is-flex" href="#减少reflow-repaint">
+        <span class="has-mr-6">19</span>
+        <span>减少reflow/repaint</span>
         </a></li></ul>
         </div>
     </div>
@@ -645,7 +672,7 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
                 <div class="control">
                     <a class="tags has-addons" href="/tags/知识/">
                         <span class="tag">知识</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -701,7 +728,7 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        10
                     </p>
                 </div>
             </div>
@@ -760,9 +787,28 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
         
         <article class="media">
             
+            <a href="/2019/02/28/一些js代码/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/p9.jpeg" alt="一些js代码">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-28T06:31:04.000Z">2019-02-28</time></div>
+                    <a href="/2019/02/28/一些js代码/" class="has-link-black-ter is-size-6">一些js代码</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/知识/">知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/29/my-rss/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/rss.svg" alt="my-rss">
+                    <img class="thumbnail" src="/img/p2.jpeg" alt="my-rss">
                 </p>
             </a>
             
@@ -781,7 +827,7 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
             
             <a href="/2019/01/29/vue3-egg仿掘金官网/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/juejin.svg" alt="vue3+egg仿掘金官网">
+                    <img class="thumbnail" src="/img/p4.jpeg" alt="vue3+egg仿掘金官网">
                 </p>
             </a>
             
@@ -800,7 +846,7 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
             
             <a href="/2018/12/28/Trao开发微信小程序/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/taro.jpg" alt="taro仿网易云音乐-小程序版">
+                    <img class="thumbnail" src="/img/p10.jpeg" alt="taro仿网易云音乐-小程序版">
                 </p>
             </a>
             
@@ -819,7 +865,7 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
             
             <a href="/2018/12/10/vue/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/Vue.svg" alt="vue">
+                    <img class="thumbnail" src="/img/p7.jpeg" alt="vue">
                 </p>
             </a>
             
@@ -829,25 +875,6 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
                     <a href="/2018/12/10/vue/" class="has-link-black-ter is-size-6">vue</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/知识/">知识</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/elevue.png" alt="electron-vue仿网易云音乐桌面应用">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-05T11:48:07.000Z">2018-11-05</time></div>
-                    <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="has-link-black-ter is-size-6">electron-vue仿网易云音乐桌面应用</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
                     </p>
                 </div>
             </div>
@@ -933,7 +960,7 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        10
                     </p>
                 </div>
             </div>
@@ -992,9 +1019,28 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
         
         <article class="media">
             
+            <a href="/2019/02/28/一些js代码/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/p9.jpeg" alt="一些js代码">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-28T06:31:04.000Z">2019-02-28</time></div>
+                    <a href="/2019/02/28/一些js代码/" class="has-link-black-ter is-size-6">一些js代码</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/知识/">知识</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/29/my-rss/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/rss.svg" alt="my-rss">
+                    <img class="thumbnail" src="/img/p2.jpeg" alt="my-rss">
                 </p>
             </a>
             
@@ -1013,7 +1059,7 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
             
             <a href="/2019/01/29/vue3-egg仿掘金官网/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/juejin.svg" alt="vue3+egg仿掘金官网">
+                    <img class="thumbnail" src="/img/p4.jpeg" alt="vue3+egg仿掘金官网">
                 </p>
             </a>
             
@@ -1032,7 +1078,7 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
             
             <a href="/2018/12/28/Trao开发微信小程序/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/taro.jpg" alt="taro仿网易云音乐-小程序版">
+                    <img class="thumbnail" src="/img/p10.jpeg" alt="taro仿网易云音乐-小程序版">
                 </p>
             </a>
             
@@ -1051,7 +1097,7 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
             
             <a href="/2018/12/10/vue/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/Vue.svg" alt="vue">
+                    <img class="thumbnail" src="/img/p7.jpeg" alt="vue">
                 </p>
             </a>
             
@@ -1061,25 +1107,6 @@ Web Storage带来的好处： 减少网络流量：一旦数据保存在本地�
                     <a href="/2018/12/10/vue/" class="has-link-black-ter is-size-6">vue</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/知识/">知识</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/elevue.png" alt="electron-vue仿网易云音乐桌面应用">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-05T11:48:07.000Z">2018-11-05</time></div>
-                    <a href="/2018/11/05/electron-vue仿网易云音乐桌面应用/" class="has-link-black-ter is-size-6">electron-vue仿网易云音乐桌面应用</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/个人项目/">个人项目</a>
                     </p>
                 </div>
             </div>
